@@ -1,0 +1,24 @@
+.wrapper {
+    height: 204px;
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 188px;
+        background-color: var(--ion-color-secondary);
+        background-image: url(/assets/images/tbilisi-scene.png), url(/assets/images/cloud.png);
+        background-size: auto 90%, 300px;
+        background-position: bottom right, left 80%;
+        background-repeat: no-repeat;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            height: 16px;
+            width: 100%;
+            background-image: url(/assets/images/river.png);
+            background-size: 100% 100%;
+            background-position: top left;
+            background-repeat: no-repeat;
+        }
+    }
+}

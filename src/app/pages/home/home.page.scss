@@ -1,0 +1,35 @@
+h1 {
+    white-space: nowrap;
+    &:after {
+        content: "'";
+        margin-left: -8px;
+        margin-top: -5px;
+        position: absolute;
+        transform: rotate(40deg);
+        animation: wiggle 2500ms infinite ease-in-out alternate;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(40deg);
+    }
+    3% {
+        transform: rotate(20deg);
+    }
+    6% {
+        transform: rotate(40deg);
+    }
+    9% {
+        transform: rotate(20deg);
+    }
+    12% {
+        transform: rotate(40deg);
+    }
+    15% {
+        transform: rotate(20deg);
+    }
+    18% {
+        transform: rotate(40deg);
+    }
+}

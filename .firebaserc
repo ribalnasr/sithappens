@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sithappensge": {
+      "hosting": {
+        "app": [
+          "sithappensge"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sithappensge"
+  }
+}

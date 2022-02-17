@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,59 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    .logo {
+        height: 100px;
+        width: 140px;
+        background-image: url(/assets/images/sit-logo.png);
+        background-size: contain;
+        background-position: left;
+        background-repeat: no-repeat;
+    }
+
+    font-size: 20px;
+    font-weight: 500;
+
+    .text-sm {
+        font-size: 0.7em;
+    }
+
+    h1 {
+        font-size: 2.4em;
+        font-weight: bolder;
+        @media screen and (min-width: 540px) {
+            font-size: 3.4em;
+        }
+    }
+    h2 {
+        font-size: 2.1em;
+        font-weight: bold;
+    }
+    h3 {
+        font-size: 1.75em;
+        font-weight: bold;
+    }
+    h4 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    h5 {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+    h6 {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    ion-button.sm-button {
+        --padding-start: 7px;
+        --padding-end: 7px;
+        height: 1.8em;
+    }
+
+    ion-col > ion-row {
+        margin: calc(-1 * var(--ion-grid-column-padding));
+    }
+}
