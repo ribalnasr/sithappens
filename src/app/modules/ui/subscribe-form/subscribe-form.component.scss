@@ -1,3 +1,15 @@
-ion-label {
+ion-label.fixed-label {
     width: 80px;
+}
+ion-label.prefix-label {
+    opacity: 0.5;
+}
+ion-item {
+    cursor: text;
+    &.item-has-value,
+    &.item-has-focus {
+        ion-label.prefix-label {
+            opacity: 1;
+        }
+    }
 }

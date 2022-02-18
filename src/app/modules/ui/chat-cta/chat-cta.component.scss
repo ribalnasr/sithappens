@@ -1,0 +1,24 @@
+.wrapper {
+    position: fixed;
+    bottom: 60px;
+    pointer-events: none;
+    transform: scale(0.1);
+    transition: 150ms all ease-in-out;
+    opacity: 0;
+    transform-origin: calc(100% - 20px) calc(100% - 20px);
+    right: 0;
+    max-width: 385px;
+    z-index: 5;
+    .close-button {
+        --box-shadow: none;
+        position: absolute;
+        pointer-events: all;
+        top: 0;
+        right: 0;
+        z-index: 5;
+    }
+    &.visible {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

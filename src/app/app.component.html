@@ -2,41 +2,86 @@
   <ion-split-pane contentId="main-content" [when]="false">
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
-        <div class="ion-padding">
-          <div class="logo"></div>
-        </div>
-        <ion-list id="inbox-list">
+        <ion-menu-toggle auto-hide="false">
+          <div class="ion-margin">
+            <div class="logo"></div>
+          </div>
+          <ion-list id="inbox-list ">
 
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-              routerLinkActive="selected">
-              <ion-icon color="primary" slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+            <ion-list-header>
+              <ion-label color="primary">Get in touch</ion-label>
+            </ion-list-header>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="logo-facebook"></ion-icon>
+              <ion-label>Messenger</ion-label>
             </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="logo-facebook"></ion-icon>
+              <ion-label>Whatsapp</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="logo-facebook"></ion-icon>
+              <ion-label>Email</ion-label>
+            </ion-item>
+            <ion-list-header class="ion-margin-top">
+              <ion-label color="primary">Follow us</ion-label>
+            </ion-list-header>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="logo-facebook"></ion-icon>
+              <ion-label>Facebook</ion-label>
+            </ion-item>
+            <ion-item routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon color="primary" slot="start" name="logo-facebook"></ion-icon>
+              <ion-label>Instagram</ion-label>
+            </ion-item>
+            <ion-list-header class="ion-margin-top">
+              <ion-label color="primary">Thank you!</ion-label>
+            </ion-list-header>
+            <ion-item lines="none">
+              <div class="text-sm">
+                <p class="ion-no-margin ion-margin-top ion-padding-top text-lg">
+                  <a href="https://www.facebook.com/BiZAROOB/"><strong>BiZAROOB</strong></a>
+                </p>
+                <p class="ion-no-margin">
+                  The talented team behind our logo &amp; identity.
+                </p>
+                <p class="ion-no-margin ion-margin-top ion-padding-top">
+                  <strong>Tbilisi landscape illustration</strong>
+                  <br>
+                  by <a href="https://www.freepik.com/vectors/landmark">Sky and Glass</a>
+                </p>
+                <p class="ion-no-margin ion-margin-top ion-padding-top">
+                  &copy; <strong>Sit Happens</strong>, 2022.
+                </p>
+                <p class="ion-no-margin ion-margin-top">
+                  A project by <strong>Christel Haddad,</strong>
+                </p>
+                <p class="ion-no-margin">
+                  Certified Dog Behaviorist.
+                </p>
+                <p class="ion-no-margin ion-margin-top">
+                  <strong>A Pet-Loving Comunity.</strong>
+                </p>
+                <p class="ion-no-margin">
+                  Tbilisi, Georgia.
+                </p>
+                <p class="ion-no-margin ion-margin-top">
+                  All rights reserved.
+                </p>
+              </div>
+            </ion-item>
+          </ion-list>
 
 
-        <div class="ion-padding text-sm">
-          <p class="ion-no-margin">
-            By <strong>Christel Haddad</strong>
-          </p>
-          <p class="ion-no-margin">
-            Certified Dog Behaviorist
-          </p>
-          <p class="ion-no-margin ion-margin-top">
-            <strong>A Pet Comunity.</strong>
-          </p>
-          <p class="ion-no-margin">
-            Tbilisi, Georgia.
-          </p>
-        </div>
+
+        </ion-menu-toggle>
 
 
 
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
+
   </ion-split-pane>
 </ion-app>

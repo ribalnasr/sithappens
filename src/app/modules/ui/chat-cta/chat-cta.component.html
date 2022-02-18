@@ -1,0 +1,32 @@
+<div class="wrapper" [class.visible]="visible">
+
+  <ion-card color="primary">
+    <ion-card-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-align-items-end">
+          <ion-col class="">
+            <h4>
+              {{ messages[activeMessage] }}
+
+              <!-- Looking for a Dog Trainer? -->
+            </h4>
+
+            <br>
+            Get in touch with <strong>Christel</strong>,
+            <br>
+            a <strong>Certified Dog Behaviorist</strong>.
+          </ion-col>
+          <ion-col size="auto">
+            <img src="/assets/images/christel-phone.png" width="100px">
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+
+    <ion-fab-button class="close-button" (click)="visible = false; userHidden = userHidden+1" size="small">
+      <ion-icon name="close"></ion-icon>
+    </ion-fab-button>
+  </ion-card>
+</div>

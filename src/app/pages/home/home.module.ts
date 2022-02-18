@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { HeaderModule } from '../../modules/ui/header/header.module';
 import { SubscribeFormModule } from '../../modules/ui/subscribe-form/subscribe-form.module';
+import { ChatCtaModule } from '../../modules/ui/chat-cta/chat-cta.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { SubscribeFormModule } from '../../modules/ui/subscribe-form/subscribe-f
     HomePageRoutingModule,
     HeaderModule,
     SubscribeFormModule,
+    ChatCtaModule
   ],
   declarations: [HomePage]
 })

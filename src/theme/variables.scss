@@ -3,9 +3,9 @@
 
 /** Ionic CSS Variables **/
 :root {
-  --ion-padding: 24px;
-  --ion-grid-padding: 24px;
-  --ion-grid-column-padding: 24px;
+  --ion-padding: 20px;
+  --ion-grid-padding: var(--ion-padding);
+  --ion-grid-column-padding: var(--ion-padding);
 
   --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
 
@@ -49,8 +49,8 @@
   --ion-color-primary-rgb: 255, 255, 255;
   --ion-color-primary-contrast: #47b9bc;
   --ion-color-primary-contrast-rgb: 71, 185, 188;
-  --ion-color-primary-shade: #39aaad;
-  --ion-color-primary-tint: #57b8bb;
+  --ion-color-primary-shade: #ffffff;
+  --ion-color-primary-tint: #ffffff;
 
   --ion-color-secondary: #7ccacc;
   --ion-color-secondary-rgb: 124, 202, 204;
@@ -114,7 +114,19 @@
   }
 
   ion-button {
-    --color-hover: var(--ion-text-color);
-    --background-hover: var(--ion-color-secondary);
+    // --color-hover: var(--ion-color-tertiary);
+    // --border-hover: var(--ion-color-tertiary);
+    // --background-hover: transparent;
+    --border-radius: 30px;
+
+    &.sm-button {
+      --padding-start: 7px;
+      --padding-end: 7px;
+      height: 1.8em;
+    }
+  }
+
+  ion-card {
+    border-radius: 24px;
   }
 }

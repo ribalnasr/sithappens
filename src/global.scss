@@ -41,6 +41,12 @@
     .text-sm {
         font-size: 0.7em;
     }
+    .text-lg {
+        font-size: 1.2em;
+    }
+    .text-light {
+        font-weight: 300;
+    }
 
     h1 {
         font-size: 2.4em;
@@ -68,12 +74,6 @@
     h6 {
         font-size: 1em;
         font-weight: bold;
-    }
-
-    ion-button.sm-button {
-        --padding-start: 7px;
-        --padding-end: 7px;
-        height: 1.8em;
     }
 
     ion-col > ion-row {

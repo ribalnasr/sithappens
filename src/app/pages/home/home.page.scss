@@ -10,6 +10,35 @@ h1 {
     }
 }
 
+.whatsapp {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUp 300ms ease-in-out 1s forwards;
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    right: 125px;
+    bottom: 16px;
+    ion-fab-button {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.surveys-cta {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 @keyframes wiggle {
     0% {
         transform: rotate(40deg);

@@ -1,24 +1,32 @@
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll()">
   <sit-header></sit-header>
   <ion-grid fixed>
     <ion-row class="ion-align-items-end">
+      <ion-col size="6">
+
+        <h1 class="ion-no-margin">
+          Tails be
+          <br>
+          wigglin
+        </h1>
+
+
+      </ion-col>
+      <ion-col size="6">
+        <img src="/assets/images/trainer.png">
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-top">
 
       <ion-col size="12" size-lg="6">
-        <ion-row class="ion-align-items-end ion-padding-bottom">
-          <ion-col size="6">
 
-            <h1 class="ion-no-margin">
-              Tails be
-              <br>
-              wigglin
-            </h1>
 
-          </ion-col>
-          <ion-col size="6">
-            <img src="/assets/images/trainer.png">
+        <p class="text-light ion-no-margin ion-margin-bottom">
+          Sit Happens is a pet-loving community that aims to bring pet enthusiasts and caregivers closer together to
+          make pet parenting easier, safer and stress-free.
+        </p>
 
-          </ion-col>
-        </ion-row>
 
         <sit-subscribe-form></sit-subscribe-form>
 
@@ -28,10 +36,10 @@
       </ion-col>
       <ion-col size="12" size-lg="6">
 
-        <div class="ion-padding-top">
+        <div class="ion-padding-bottom">
 
 
-          <h6>
+          <h6 class="ion-no-margin ion-margin-bottom">
             Follow Sit Happens
           </h6>
           <div>
@@ -54,7 +62,7 @@
 
 
 
-        <ion-row class="ion-align-items-center ion-justify-content-center ion-padding-top">
+        <ion-row class="ion-align-items-center ion-justify-content-center surveys-cta">
           <ion-col size="6" size-sm="auto">
 
             <div class="ion-text-center">
@@ -65,53 +73,26 @@
           </ion-col>
           <ion-col size="6" size-sm="auto">
 
-            <div>
+            <div class="ion-margin-bottom">
               Help us
               <br>
               get there faster
             </div>
             <ion-button fill="outline">
-              Take the survey
+              Take a survey
             </ion-button>
           </ion-col>
         </ion-row>
 
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center">
+    <!-- <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-md="9" size-lg="6">
-        <ion-card color="secondary" class="ion-no-margin">
-          <ion-card-content>
-            <h4>
-              Ready to learn how to train
-              your dog at home?
-
-            </h4>
-            <ion-grid class="ion-no-padding ion-padding-top">
-              <ion-row class="ion-align-items-center">
-                <ion-col>
-                  Get in touch with <strong>Christel</strong>,
-                  <br>
-                  a <strong>Certified Dog Behaviorist</strong>.
-                  <div class="ion-padding-top">
-                    <img class="ion-margin-end" src="/assets/images/messenger.png" width="60px">
-                    <img class="ion-margin-end" src="/assets/images/whatsapp.png" width="60px">
-                    <img class="ion-margin-end" src="/assets/images/email.png" width="60px">
-
-                  </div>
-                </ion-col>
-                <ion-col size="auto">
-                  <img src="/assets/images/christel-phone.png" width="140px">
-
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-
-          </ion-card-content>
-        </ion-card>
+        <sit-chat-cta></sit-chat-cta>
 
       </ion-col>
-    </ion-row>
+    </ion-row> -->
+    <div #chatCheckpoint></div>
     <ion-row class="ion-align-items-top">
 
       <ion-col size="12" size-lg="6">
@@ -129,7 +110,8 @@
           Only 4 minutes of your time can help us make
           pet-parenting in Tbilisi easier and safer.
         </p>
-        <ion-button fill="outline" expand="block">
+        <ion-button fill="outline" expand="block" target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdeUurh-6M_YNu1kC0-5dljDLOy-CT5eDh0uWomKU40yCZQCw/viewform?usp=sf_link">
           Take the survey
         </ion-button>
       </ion-col>
@@ -145,41 +127,24 @@
           Only 4 minutes of your time can help us make
           pet caregiving in Tbilisi better and more accessible.
         </p>
-        <ion-button fill="outline" expand="block">
+        <ion-button fill="outline" expand="block" target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeSaW1iLE_QJKFcIrEjKAfwrpM_NP0dz7gATkVfgCuaWf-TSA/viewform?usp=sf_link">
           Take the survey
         </ion-button>
 
 
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center">
+    <!-- <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-md="8" size-lg="6">
-        <ion-card color="secondary" class="ion-no-margin">
-          <ion-card-content>
-            <h4>
-              Looking for a Dog Trainer?
-            </h4>
-            <ion-grid class="ion-no-padding ion-padding-top">
-              <ion-row class="ion-align-items-center">
-                <ion-col>
-                  Get in touch with <strong>Christel</strong>,
-                  <br>
-                  a <strong>Certified Dog Behaviorist</strong>.
-                </ion-col>
-                <ion-col size="auto">
-                  <img src="/assets/images/christel-phone.png" width="100px">
-
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-
-          </ion-card-content>
-        </ion-card>
+        <sit-chat-cta></sit-chat-cta>
 
       </ion-col>
     </ion-row>
+ -->
+    <div #chatCheckpoint [style.height]="'120px'"></div>
 
-    <ion-row>
+    <ion-row [style.margin-bottom]="'60px'">
       <ion-col size="12" class="ion-text-center text-sm">
 
         &copy; Sit Happens, 2022. All rights reserved.
@@ -187,4 +152,14 @@
     </ion-row>
 
   </ion-grid>
+
+  <sit-chat-cta></sit-chat-cta>
+
+
+  <ion-fab class="whatsapp" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="success" target="_blank" href="https://wa.me/+995511124199">
+      <ion-icon name="logo-whatsapp" color="primary"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
