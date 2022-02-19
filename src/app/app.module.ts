@@ -16,11 +16,38 @@ import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { FPModule } from './modules/fireplace/fireplace.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot({ mode: 'ios' }), AppRoutingModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAnalytics(() => getAnalytics()), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideFunctions(() => getFunctions()), provideMessaging(() => getMessaging()), providePerformance(() => getPerformance()), provideRemoteConfig(() => getRemoteConfig()), provideStorage(() => getStorage())],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({ mode: 'ios' }),
+    AppRoutingModule,
+    FPModule.forRoot({
+      schemas: [
+        {
+          key: 'subscribers',
+          collection: 'sit_subscribers',
+          fields: [
+            { key: 'email', type: 'text', label: 'Email' },
+            { key: 'facebook', type: 'text', label: 'Facebook' },
+            { key: 'instagram', type: 'text', label: 'Instagram' },
+            { key: 'whatsapp', type: 'text', label: 'WhatsApp' },
+          ]
+        }
+      ]
+    }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    providePerformance(() => getPerformance()),
+    provideRemoteConfig(() => getRemoteConfig()),
+    provideStorage(() => getStorage())],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService, UserTrackingService],
   bootstrap: [AppComponent],
 })

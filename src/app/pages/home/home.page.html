@@ -19,12 +19,13 @@
     </ion-row>
     <ion-row class="ion-align-items-top">
 
-      <ion-col size="12" size-lg="6">
+      <ion-col size="12" size-lg="6" class="ion-no-padding ion-padding-bottom">
 
 
-        <p class="text-light ion-no-margin ion-margin-bottom">
-          Sit Happens is a pet-loving community that aims to bring pet enthusiasts and caregivers closer together to
-          make pet parenting easier, safer and stress-free.
+        <p class="text-light ion-padding ion-no-margin ion-margin-bottom">
+          <strong>Sit Happens</strong> is a <strong>pet-loving community</strong> that aims to bring pet enthusiasts and
+          caregivers closer together to
+          make pet parenting <strong>easier, safer & stress-free</strong>.
         </p>
 
 
@@ -44,7 +45,7 @@
           </h6>
           <div>
             <ion-button class="sm-button" href="https://facebook.com/sithappensge" target="_blank" size="large"
-              fill="clear">
+              fill="clear" (click)="logEvent('facebook_link_clicked')">
               <ion-icon slot="start" name="logo-facebook"></ion-icon>
               facebook.com/<strong>sithappensge</strong>
             </ion-button>
@@ -52,9 +53,17 @@
           </div>
           <div>
             <ion-button class="sm-button" href="https://instagram.com/sithappensge" target="_blank" size="large"
-              fill="clear">
+              fill="clear" (click)="logEvent('twitter_link_clicked')">
               <ion-icon slot="start" name="logo-instagram"></ion-icon>
               instagram.com/<strong>sithappensge</strong>
+            </ion-button>
+
+          </div>
+          <div>
+            <ion-button class="sm-button" href="https://twitter.com/sithappensge" target="_blank" size="large"
+              fill="clear" (click)="logEvent('twitter_link_clicked')">
+              <ion-icon slot="start" name="logo-twitter"></ion-icon>
+              twitter.com/<strong>sithappensge</strong>
             </ion-button>
 
           </div>
@@ -62,7 +71,7 @@
 
 
 
-        <ion-row class="ion-align-items-center ion-justify-content-center surveys-cta">
+        <ion-row class="ion-align-items-center ion-justify-content-center empty-space">
           <ion-col size="6" size-sm="auto">
 
             <div class="ion-text-center">
@@ -78,7 +87,7 @@
               <br>
               get there faster
             </div>
-            <ion-button fill="outline">
+            <ion-button fill="outline" (click)="scrollToSurveys()">
               Take a survey
             </ion-button>
           </ion-col>
@@ -95,11 +104,11 @@
     <div #chatCheckpoint></div>
     <ion-row class="ion-align-items-top">
 
-      <ion-col size="12" size-lg="6">
+      <ion-col size="12" size-lg="6" class="empty-space">
 
 
 
-        <div class="ion-text-center">
+        <div class="ion-text-center" #firstSurvey>
           <img src="/assets/images/living.png" height="200px">
         </div>
 
@@ -108,14 +117,14 @@
         </h3>
         <p>
           Only 4 minutes of your time can help us make
-          pet-parenting in Tbilisi easier and safer.
+          pet-parenting in Tbilisi safer & stress-free.
         </p>
-        <ion-button fill="outline" expand="block" target="_blank"
+        <ion-button fill="outline" expand="block" target="_blank" (click)="logEvent('parenting_survey_link_clicked')"
           href="https://docs.google.com/forms/d/e/1FAIpQLSdeUurh-6M_YNu1kC0-5dljDLOy-CT5eDh0uWomKU40yCZQCw/viewform?usp=sf_link">
           Take the survey
         </ion-button>
       </ion-col>
-      <ion-col size="12" size-lg="6">
+      <ion-col size="12" size-lg="6" class="empty-space">
         <div class="ion-text-center">
           <img src="/assets/images/park.png" height="200px">
         </div>
@@ -125,9 +134,9 @@
         </h3>
         <p>
           Only 4 minutes of your time can help us make
-          pet caregiving in Tbilisi better and more accessible.
+          pet caregiving in Tbilisi easier & more accessible.
         </p>
-        <ion-button fill="outline" expand="block" target="_blank"
+        <ion-button fill="outline" expand="block" target="_blank" (click)="logEvent('caregiving_survey_link_clicked')"
           href="https://docs.google.com/forms/d/e/1FAIpQLSeSaW1iLE_QJKFcIrEjKAfwrpM_NP0dz7gATkVfgCuaWf-TSA/viewform?usp=sf_link">
           Take the survey
         </ion-button>
@@ -142,10 +151,10 @@
       </ion-col>
     </ion-row>
  -->
-    <div #chatCheckpoint [style.height]="'120px'"></div>
+    <div #chatCheckpoint [style.margin-top]="'150px'"></div>
 
-    <ion-row [style.margin-bottom]="'60px'">
-      <ion-col size="12" class="ion-text-center text-sm">
+    <ion-row>
+      <ion-col size="6" size-md="12" class="text-sm">
 
         &copy; Sit Happens, 2022. All rights reserved.
       </ion-col>
@@ -157,7 +166,8 @@
 
 
   <ion-fab class="whatsapp" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button size="small" color="success" target="_blank" href="https://wa.me/+995511124199">
+    <ion-fab-button size="small" color="success" target="_blank" href="https://wa.me/+995511124199"
+      (click)="logEvent('whatsapp_chat_clicked')">
       <ion-icon name="logo-whatsapp" color="primary"></ion-icon>
     </ion-fab-button>
   </ion-fab>

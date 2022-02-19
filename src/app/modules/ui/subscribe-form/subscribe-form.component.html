@@ -1,31 +1,55 @@
-<h3 class="ion-no-margin ion-margin-bottom">
-  We’ll let you know when we’re ready.
-</h3>
-<div class="text-sm">
-  Please fill in at least one field.
-</div>
+<ion-card class="ion-no-margin" [color]="subscribed ? 'secondary' : 'primary'">
+  <ion-card-content>
 
-<ion-list class="ion-margin-vertical">
-  <ion-item>
-    <ion-label class="fixed-label">Email</ion-label>
-    <ion-input placeholder="Your email address"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label class="fixed-label">Facebook</ion-label>
-    <ion-label class="prefix-label ion-no-margin ion-margin-vertical">facebook.com/</ion-label>
-    <ion-input placeholder="username"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label class="fixed-label">Instagram</ion-label>
-    <ion-label class="prefix-label ion-no-margin ion-margin-vertical">instagram.com/</ion-label>
-    <ion-input placeholder="username"></ion-input>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label class="fixed-label">Whatsapp</ion-label>
-    <ion-input placeholder="+995 XXX XX XX XX"></ion-input>
-  </ion-item>
-</ion-list>
+    <form [formGroup]="form" (submit)="subscribe()" *ngIf="!subscribed; else submitted">
 
-<ion-button expand="block" size="large">
-  <strong>Send me the good news!</strong>
-</ion-button>
+      <h3 class="ion-no-margin ion-margin-bottom">
+        We’ll let you know when we’re ready.
+      </h3>
+
+      <div class="text-sm">
+        Please fill in at least one field.
+      </div>
+
+      <ion-list class="ion-padding-vertical">
+        <ion-item color="primary">
+          <ion-label class="fixed-label">Facebook</ion-label>
+          <ion-label class="prefix-label ion-no-margin ion-margin-vertical">facebook.com/</ion-label>
+          <ion-input formControlName="facebook" placeholder="username"></ion-input>
+        </ion-item>
+        <ion-item color="primary">
+          <ion-label class="fixed-label">Instagram</ion-label>
+          <ion-label class="prefix-label ion-no-margin ion-margin-vertical">instagram.com/</ion-label>
+          <ion-input formControlName="instagram" placeholder="username"></ion-input>
+        </ion-item>
+        <ion-item color="primary">
+          <ion-label class="fixed-label">Whatsapp</ion-label>
+          <ion-label class="prefix-label ion-no-margin ion-margin-vertical">+</ion-label>
+          <ion-input formControlName="whatsapp" placeholder="995 XXX XXX XXX"></ion-input>
+        </ion-item>
+        <ion-item lines="none" color="primary">
+          <ion-label class="fixed-label">Email</ion-label>
+          <ion-input formControlName="email" placeholder="Your email address"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button type="submit" expand="block" size="large" [disabled]="!valid" color="light">
+        <strong>Send me the good news!</strong>
+      </ion-button>
+    </form>
+
+
+    <ng-template #submitted>
+      <h3 class="ion-no-margin ion-margin-bottom">
+        Thank you!
+      </h3>
+      <p>
+        We will be in touch.
+      </p>
+      <div class="ion-padding-top">
+        Meanwhile, let's spread the word...
+      </div>
+    </ng-template>
+
+  </ion-card-content>
+</ion-card>

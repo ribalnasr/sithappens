@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Analytics, logEvent } from '@angular/fire/analytics';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -9,11 +10,13 @@ import { MenuController } from '@ionic/angular';
 export class HeaderComponent {
 
   constructor(
-    public menu: MenuController
+    private menu: MenuController,
+    private analytics: Analytics
   ) { }
 
   menuOpen() {
-    this.menu.open()
+    this.menu.open();
+    logEvent(this.analytics, 'menu_clicked')
   }
 
 }

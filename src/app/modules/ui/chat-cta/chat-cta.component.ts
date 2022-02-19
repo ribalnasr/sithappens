@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Analytics, logEvent } from '@angular/fire/analytics';
 
 @Component({
   selector: 'sit-chat-cta',
@@ -7,23 +8,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ChatCtaComponent implements OnInit {
 
-  @Input()
-  public set srcoll(event) {
-    console.log(event)
-  }
-
   public visible = false;
   public userHidden = -1;
   public activeMessage = 0;
 
-
-  constructor() { }
+  constructor(
+    private analytics: Analytics
+  ) { }
 
   ngOnInit() { }
 
   public messages = [
     'Ready to learn how to train your dog at home?',
-    'Looking for dog trainer?',
+    'Looking for a dog trainer?',
   ]
+
+  closePopup() {
+
+
+    logEvent(this.analytics, 'chat_popup_closed')
+
+  }
 
 }

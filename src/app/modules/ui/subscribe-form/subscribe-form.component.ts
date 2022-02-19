@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'sit-subscribe-form',
@@ -7,8 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscribeFormComponent implements OnInit {
 
-  constructor() { }
+  public form = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+    facebook: ['', [Validators.required, Validators.minLength(5)]],
+    instagram: ['', [Validators.required, Validators.minLength(5)]],
+    whatsapp: ['', [Validators.required, Validators.minLength(8)]],
+  });
 
-  ngOnInit() {}
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
+
+  ngOnInit() { }
+
+  public get valid() {
+    return this.form.controls.email.valid
+      || this.form.controls.facebook.valid
+      || this.form.controls.instagram.valid
+      || this.form.controls.whatsapp.valid
+  }
+
+  public subscribed = false;
+
+  public subscribe() {
+    this.subscribed = true
+  }
 
 }
