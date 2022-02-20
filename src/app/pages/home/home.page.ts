@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ChatCtaComponent } from '../../modules/ui/chat-cta/chat-cta.component';
 import { Analytics, logEvent } from '@angular/fire/analytics';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'sit-home',
@@ -9,12 +10,13 @@ import { Analytics, logEvent } from '@angular/fire/analytics';
 })
 export class HomePage implements OnInit {
 
+  @ViewChild('body', { static: true }) body: IonContent;
   @ViewChild('firstSurvey', { static: true }) firstSurvey: ElementRef<HTMLElement>;
   @ViewChild(ChatCtaComponent, { static: true }) chatCta: ChatCtaComponent;
   @ViewChildren('chatCheckpoint') chatCheckpoints: QueryList<ElementRef<HTMLElement>>;
 
   constructor(
-    private analytics: Analytics
+    private analytics: Analytics,
   ) { }
 
   ngOnInit() {
@@ -22,7 +24,11 @@ export class HomePage implements OnInit {
 
   scrollToSurveys() {
     logEvent(this.analytics, 'helpus_button_clicked')
-    this.firstSurvey.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+    const top = this.firstSurvey.nativeElement.offsetTop
+
+    this.body.scrollToPoint(0, top, 300);
+    // this.firstSurvey.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   onScroll() {

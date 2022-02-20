@@ -12,6 +12,9 @@ export const environment = {
     messagingSenderId: '1084099474267',
     measurementId: 'G-10PN0J54LL',
   },
+  recaptcha: {
+    siteKey: '6LemK48eAAAAAIYikmr9bZRBfdd6KSlwkBe6Mwy8'
+  },
   production: false
 };
 

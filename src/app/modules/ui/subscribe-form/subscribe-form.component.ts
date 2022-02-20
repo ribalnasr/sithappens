@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { FPContent } from '../../fireplace/content/content.service';
+
 
 @Component({
   selector: 'sit-subscribe-form',
@@ -16,7 +18,8 @@ export class SubscribeFormComponent implements OnInit {
   });
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private content: FPContent
   ) { }
 
   ngOnInit() { }
@@ -30,8 +33,19 @@ export class SubscribeFormComponent implements OnInit {
 
   public subscribed = false;
 
-  public subscribe() {
-    this.subscribed = true
+  public async subscribe() {
+    console.log(this.form.value)
+    if (this.valid) {
+
+      const result = await this.content.create({
+        schema: 'subscribers',
+        data: this.form.value
+      })
+
+
+      console.log(result);
+      this.subscribed = true
+    }
   }
 
 }

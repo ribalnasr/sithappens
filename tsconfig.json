@@ -11,8 +11,25 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
+    "paths": {
+      "@sithappens/apis": [
+        "dist/sithappens/apis/sithappens-apis",
+        "dist/sithappens/apis"
+      ],
+      "@sithappens/data": [
+        "dist/sithappens/data/sithappens-data",
+        "dist/sithappens/data"
+      ],
+      "@sithappens/types": [
+        "dist/sithappens/types/sithappens-types",
+        "dist/sithappens/types"
+      ]
+    },
     "module": "es2020",
-    "lib": ["es2018", "dom"]
+    "lib": [
+      "es2018",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

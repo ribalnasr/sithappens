@@ -181,6 +181,99 @@
           }
         }
       }
+    },
+    "@sithappens/types": {
+      "projectType": "library",
+      "root": "projects/sithappens/types",
+      "sourceRoot": "projects/sithappens/types/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sithappens/types/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sithappens/types/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sithappens/types/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sithappens/types/src/test.ts",
+            "tsConfig": "projects/sithappens/types/tsconfig.spec.json",
+            "karmaConfig": "projects/sithappens/types/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@sithappens/data": {
+      "projectType": "library",
+      "root": "projects/sithappens/data",
+      "sourceRoot": "projects/sithappens/data/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sithappens/data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sithappens/data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sithappens/data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sithappens/data/src/test.ts",
+            "tsConfig": "projects/sithappens/data/tsconfig.spec.json",
+            "karmaConfig": "projects/sithappens/data/karma.conf.js"
+          }
+        }
+      }
+    },
+    "@sithappens/apis": {
+      "projectType": "library",
+      "root": "projects/sithappens/apis",
+      "sourceRoot": "projects/sithappens/apis/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sithappens/apis/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sithappens/apis/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sithappens/apis/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sithappens/apis/src/test.ts",
+            "tsConfig": "projects/sithappens/apis/tsconfig.spec.json",
+            "karmaConfig": "projects/sithappens/apis/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "cli": {

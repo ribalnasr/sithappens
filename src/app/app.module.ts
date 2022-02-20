@@ -6,17 +6,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { provideFunctions, getFunctions } from '@angular/fire/functions';
-import { provideMessaging, getMessaging } from '@angular/fire/messaging';
-import { providePerformance, getPerformance } from '@angular/fire/performance';
-import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
-import { provideStorage, getStorage } from '@angular/fire/storage';
-import { FPModule } from './modules/fireplace/fireplace.module';
+import { FirebaseModule } from './modules/firebase/firebase.module';
+import { DataModule } from './modules/data/data.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,30 +16,10 @@ import { FPModule } from './modules/fireplace/fireplace.module';
     BrowserModule,
     IonicModule.forRoot({ mode: 'ios' }),
     AppRoutingModule,
-    FPModule.forRoot({
-      schemas: [
-        {
-          key: 'subscribers',
-          collection: 'sit_subscribers',
-          fields: [
-            { key: 'email', type: 'text', label: 'Email' },
-            { key: 'facebook', type: 'text', label: 'Facebook' },
-            { key: 'instagram', type: 'text', label: 'Instagram' },
-            { key: 'whatsapp', type: 'text', label: 'WhatsApp' },
-          ]
-        }
-      ]
-    }),
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAnalytics(() => getAnalytics()),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    providePerformance(() => getPerformance()),
-    provideRemoteConfig(() => getRemoteConfig()),
-    provideStorage(() => getStorage())],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService, UserTrackingService],
+    FirebaseModule,
+    DataModule
+  ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
