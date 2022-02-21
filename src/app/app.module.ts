@@ -17,7 +17,7 @@ import { DataModule } from './modules/data/data.module';
     IonicModule.forRoot({ mode: 'ios' }),
     AppRoutingModule,
     FirebaseModule,
-    DataModule
+    DataModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

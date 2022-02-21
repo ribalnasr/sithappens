@@ -12,10 +12,6 @@
     "importHelpers": true,
     "target": "es2015",
     "paths": {
-      "@sithappens/apis": [
-        "dist/sithappens/apis/sithappens-apis",
-        "dist/sithappens/apis"
-      ],
       "@sithappens/data": [
         "dist/sithappens/data/sithappens-data",
         "dist/sithappens/data"

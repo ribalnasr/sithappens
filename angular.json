@@ -173,11 +173,13 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
-            "prerender": false,
+            "prerender": true,
             "ssr": false,
             "browserTarget": "sithappens:build:production",
             "firebaseProject": "sithappensge",
-            "firebaseHostingSite": "sithappensge"
+            "firebaseHostingSite": "sithappensge",
+            "serverTarget": "sithappens:server:production",
+            "prerenderTarget": "sithappens:prerender:production"
           }
         },
         "server": {
@@ -300,37 +302,6 @@
             "main": "projects/sithappens/data/src/test.ts",
             "tsConfig": "projects/sithappens/data/tsconfig.spec.json",
             "karmaConfig": "projects/sithappens/data/karma.conf.js"
-          }
-        }
-      }
-    },
-    "@sithappens/apis": {
-      "projectType": "library",
-      "root": "projects/sithappens/apis",
-      "sourceRoot": "projects/sithappens/apis/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/sithappens/apis/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/sithappens/apis/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/sithappens/apis/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/sithappens/apis/src/test.ts",
-            "tsConfig": "projects/sithappens/apis/tsconfig.spec.json",
-            "karmaConfig": "projects/sithappens/apis/karma.conf.js"
           }
         }
       }
