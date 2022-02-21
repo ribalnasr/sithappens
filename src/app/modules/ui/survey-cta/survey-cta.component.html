@@ -1,0 +1,14 @@
+<div class="ion-text-center">
+  <img [src]="activeSurvey.imageUrl" height="200px">
+</div>
+
+<h3>
+  {{ activeSurvey.title }}
+</h3>
+<p>
+  {{ activeSurvey.body }}
+</p>
+<ion-button expand="block" target="_blank" (click)="logEvent(activeSurvey.analyticsEvent)"
+  [href]="activeSurvey.formUrl">
+  Take the survey
+</ion-button>

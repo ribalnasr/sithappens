@@ -201,6 +201,10 @@ export class FPContent {
           options.id!
         ),
         nonLocalizedData
+      ).catch(
+        error => {
+          console.error(error)
+        }
       )
     }
 

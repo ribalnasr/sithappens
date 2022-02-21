@@ -1,4 +1,17 @@
-<ion-content [scrollEvents]="true" (ionScroll)="onScroll()" #body>
+<ion-header class="mini-header ion-no-border" [class.visible]="showMiniHeader">
+  <ion-grid fixed class="ion-no-padding ion-padding-horizontal">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <img slot="start" class="icon-logo" src="/assets/images/favicon.png" alt="">
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)" #body>
   <sit-header></sit-header>
   <ion-grid fixed>
     <ion-row class="ion-align-items-end">
@@ -95,75 +108,35 @@
 
       </ion-col>
     </ion-row>
-    <!-- <ion-row class="ion-justify-content-center">
-      <ion-col size="12" size-md="9" size-lg="6">
-        <sit-chat-cta></sit-chat-cta>
-
-      </ion-col>
-    </ion-row> -->
     <div #chatCheckpoint></div>
-    <ion-row class="ion-align-items-top">
-
-      <ion-col size="12" size-lg="6" class="empty-space">
-
-
-
-        <div class="ion-text-center" #firstSurvey>
-          <img src="/assets/images/living.png" height="200px">
-        </div>
-
-        <h3>
-          Does your family include a Pet?
-        </h3>
-        <p>
-          Only 4 minutes of your time can help us make
-          pet-parenting in Tbilisi safer & stress-free.
-        </p>
-        <ion-button fill="outline" expand="block" target="_blank" (click)="logEvent('parenting_survey_link_clicked')"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdeUurh-6M_YNu1kC0-5dljDLOy-CT5eDh0uWomKU40yCZQCw/viewform?usp=sf_link">
-          Take the survey
-        </ion-button>
-      </ion-col>
-      <ion-col size="12" size-lg="6" class="empty-space">
-        <div class="ion-text-center">
-          <img src="/assets/images/park.png" height="200px">
-        </div>
-
-        <h3>
-          Do you enjoy Pet Sitting, Dog Walking or Boarding?
-        </h3>
-        <p>
-          Only 4 minutes of your time can help us make
-          pet caregiving in Tbilisi easier & more accessible.
-        </p>
-        <ion-button fill="outline" expand="block" target="_blank" (click)="logEvent('caregiving_survey_link_clicked')"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeSaW1iLE_QJKFcIrEjKAfwrpM_NP0dz7gATkVfgCuaWf-TSA/viewform?usp=sf_link">
-          Take the survey
-        </ion-button>
-
-
-      </ion-col>
-    </ion-row>
-    <!-- <ion-row class="ion-justify-content-center">
-      <ion-col size="12" size-md="8" size-lg="6">
-        <sit-chat-cta></sit-chat-cta>
-
-      </ion-col>
-    </ion-row>
- -->
-    <div #chatCheckpoint [style.margin-top]="'150px'"></div>
-
-    <ion-row>
-      <ion-col size="6" size-md="12" class="text-sm">
-
-        &copy; Sit Happens, 2022. All rights reserved.
-      </ion-col>
-    </ion-row>
-
   </ion-grid>
 
-  <sit-chat-cta></sit-chat-cta>
 
+  <div #firstSurvey>
+
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-end">
+        <ion-col size="12" size-lg="6" class="empty-space">
+          <sit-survey-cta [survey]="'parenting'"></sit-survey-cta>
+        </ion-col>
+        <ion-col size="12" size-lg="6" class="empty-space">
+          <sit-survey-cta [survey]="'caregiving'"></sit-survey-cta>
+        </ion-col>
+      </ion-row>
+
+      <div #chatCheckpoint [style.margin-top]="'150px'"></div>
+
+      <ion-row>
+        <ion-col size="6" size-md="12" class="text-sm">
+
+          &copy; Sit Happens, 2022. All rights reserved.
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  <sit-chat-cta></sit-chat-cta>
 
   <ion-fab class="whatsapp" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button size="small" color="success" target="_blank" href="https://wa.me/+995511124199"

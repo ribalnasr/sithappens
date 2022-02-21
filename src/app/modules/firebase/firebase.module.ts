@@ -10,13 +10,7 @@ import { providePerformance, getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { initializeAppCheck, ReCaptchaV3Provider, provideAppCheck } from '@angular/fire/app-check';
-
-// const app = initializeApp(environment.firebase);
-// const appCheck = initializeAppCheck(app, {
-//   provider: new ReCaptchaV3Provider('abcdefghijklmnopqrstuvwxy-1234567890abcd'),
-//   isTokenAutoRefreshEnabled: true
-// })
-
+import { AnalyticsService } from './analytics.service';
 
 @NgModule({
   imports: [
@@ -29,13 +23,15 @@ import { initializeAppCheck, ReCaptchaV3Provider, provideAppCheck } from '@angul
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
-    provideAppCheck(() => initializeAppCheck(getApp(),
-      { provider: new ReCaptchaV3Provider(environment.recaptcha.siteKey), isTokenAutoRefreshEnabled: true })),
-
+    provideAppCheck(() => initializeAppCheck(getApp(), {
+      provider: new ReCaptchaV3Provider(environment.recaptcha.siteKey),
+      isTokenAutoRefreshEnabled: true
+    })),
   ],
   providers: [
     ScreenTrackingService,
-    UserTrackingService
+    UserTrackingService,
+    AnalyticsService
   ],
 
 })

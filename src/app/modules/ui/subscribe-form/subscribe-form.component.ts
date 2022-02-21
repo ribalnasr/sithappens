@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FPContent } from '../../fireplace/content/content.service';
+import { AnalyticsService } from '../../firebase/analytics.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class SubscribeFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private content: FPContent
+    private content: FPContent,
+    private analytics: AnalyticsService,
   ) { }
 
   ngOnInit() { }
@@ -34,8 +36,9 @@ export class SubscribeFormComponent implements OnInit {
   public subscribed = false;
 
   public async subscribe() {
-    console.log(this.form.value)
     if (this.valid) {
+
+      this.analytics.logEvent('subscribe_form_submitted');
 
       const result = await this.content.create({
         schema: 'subscribers',
@@ -43,9 +46,9 @@ export class SubscribeFormComponent implements OnInit {
       })
 
 
-      console.log(result);
       this.subscribed = true
     }
   }
+
 
 }
