@@ -1,6 +1,6 @@
 import 'zone.js/dist/zone-node';
 import 'zone.js/dist/zone-patch-rxjs';
-import '@angular/fire/firestore-protos';
+// import '@angular/fire/firestore-protos';
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';

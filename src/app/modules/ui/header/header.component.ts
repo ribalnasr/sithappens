@@ -9,14 +9,4 @@ import { MenuController } from '@ionic/angular';
 })
 export class HeaderComponent {
 
-  constructor(
-    private menu: MenuController,
-    private analytics: Analytics
-  ) { }
-
-  menuOpen() {
-    this.menu.open();
-    logEvent(this.analytics, 'menu_clicked')
-  }
-
 }

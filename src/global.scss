@@ -79,4 +79,9 @@
     ion-col > ion-row {
         margin: calc(-1 * var(--ion-grid-column-padding));
     }
+
+    .st-btn {
+        display: block !important;
+        border: none !important;
+    }
 }

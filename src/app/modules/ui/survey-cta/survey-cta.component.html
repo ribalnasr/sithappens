@@ -8,7 +8,6 @@
 <p>
   {{ activeSurvey.body }}
 </p>
-<ion-button expand="block" target="_blank" (click)="logEvent(activeSurvey.analyticsEvent)"
-  [href]="activeSurvey.formUrl">
+<ion-button expand="block" (click)="goTo(activeSurvey.formUrl, activeSurvey.analyticsEvent)">
   Take the survey
 </ion-button>

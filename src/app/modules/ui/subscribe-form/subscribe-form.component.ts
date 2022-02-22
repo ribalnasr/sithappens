@@ -12,7 +12,7 @@ import { AnalyticsService } from '../../firebase/analytics.service';
 export class SubscribeFormComponent implements OnInit {
 
   public form = this.formBuilder.group({
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/)]],
     facebook: ['', [Validators.required, Validators.minLength(5)]],
     instagram: ['', [Validators.required, Validators.minLength(5)]],
     whatsapp: ['', [Validators.required, Validators.minLength(8)]],
@@ -39,14 +39,13 @@ export class SubscribeFormComponent implements OnInit {
     if (this.valid) {
 
       this.analytics.logEvent('subscribe_form_submitted');
-
-      const result = await this.content.create({
+      this.subscribed = true
+      await this.content.create({
         schema: 'subscribers',
         data: this.form.value
       })
 
 
-      this.subscribed = true
     }
   }
 

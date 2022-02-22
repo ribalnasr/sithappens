@@ -45,11 +45,18 @@ export class SurveyCtaComponent implements OnInit {
     return surveys.find(survey => survey.type === this.survey)
   }
 
-  public logEvent = this.analytics.logEvent;
 
   constructor(
     private analytics: AnalyticsService,
   ) { }
+
+  public goTo(url: string, event?: string) {
+    window.open(url, '_blank');
+    if (event) {
+      this.analytics.logEvent(event)
+    }
+  }
+
 
   ngOnInit() { }
 

@@ -9,8 +9,8 @@
 
   --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
 
-  --ion-background-color: #47b9bc;
-  --ion-background-color-rgb: 71, 185, 188;
+  --ion-background-color: #7ccacc;
+  --ion-background-color-rgb: 124, 202, 204;
 
   --ion-text-color: #ffffff;
   --ion-text-color-rgb: 255, 255, 255;
@@ -59,12 +59,12 @@
   --ion-color-secondary-shade: #5eb0b3;
   --ion-color-secondary-tint: #87c0c2;
 
-  --ion-color-tertiary: #6a64ff;
+  --ion-color-tertiary: #47b9bc;
   --ion-color-tertiary-rgb: 106, 100, 255;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #5d58e0;
-  --ion-color-tertiary-tint: #7974ff;
+  --ion-color-tertiary-shade: #58cdd1;
+  --ion-color-tertiary-tint: #459ea1;
 
   --ion-color-success: #2fdf75;
   --ion-color-success-rgb: 47, 223, 117;
@@ -110,7 +110,6 @@
 
   ion-item {
     --border-color: rgba(71, 185, 188, 0.5);
-    --padding-start: 0;
   }
 
   ion-button {

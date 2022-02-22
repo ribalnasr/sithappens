@@ -5,6 +5,7 @@ ion-header.mini-header {
     .icon-logo {
         opacity: 0;
         width: 36px;
+        margin: 0 6px;
         transition: opacity 150ms ease-in-out;
     }
 
@@ -33,6 +34,7 @@ h1 {
 }
 
 .whatsapp {
+    z-index: 2000;
     opacity: 0;
     transform: translateY(100px);
     animation: slideUp 300ms ease-in-out 1s forwards;

@@ -1,17 +1,18 @@
 <ion-header class="mini-header ion-no-border" [class.visible]="showMiniHeader">
-  <ion-grid fixed class="ion-no-padding ion-padding-horizontal">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <img slot="start" class="icon-logo" src="/assets/images/favicon.png" alt="">
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-grid>
+  <!-- <ion-grid fixed class="ion-no-padding ion-padding-horizontal"> -->
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img slot="start" class="icon-logo" src="/assets/images/favicon.png" alt="">
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- </ion-grid> -->
 </ion-header>
 
-<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)" #body>
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)" #body color="tertiary"
+  id="content">
   <sit-header></sit-header>
   <ion-grid fixed>
     <ion-row class="ion-align-items-end">
@@ -57,24 +58,24 @@
             Follow Sit Happens
           </h6>
           <div>
-            <ion-button class="sm-button" href="https://facebook.com/sithappensge" target="_blank" size="large"
-              fill="clear" (click)="logEvent('facebook_link_clicked')">
+            <ion-button class="sm-button" size="large" fill="clear"
+              (click)="goTo('https://facebook.com/sithappensge', 'facebook_link_clicked')">
               <ion-icon slot="start" name="logo-facebook"></ion-icon>
               facebook.com/<strong>sithappensge</strong>
             </ion-button>
 
           </div>
           <div>
-            <ion-button class="sm-button" href="https://instagram.com/sithappensge" target="_blank" size="large"
-              fill="clear" (click)="logEvent('twitter_link_clicked')">
+            <ion-button class="sm-button" size="large" fill="clear"
+              (click)="goTo('https://instagram.com/sithappensge', 'twitter_link_clicked')">
               <ion-icon slot="start" name="logo-instagram"></ion-icon>
               instagram.com/<strong>sithappensge</strong>
             </ion-button>
 
           </div>
           <div>
-            <ion-button class="sm-button" href="https://twitter.com/sithappensge" target="_blank" size="large"
-              fill="clear" (click)="logEvent('twitter_link_clicked')">
+            <ion-button class="sm-button" size="large" fill="clear"
+              (click)="goTo('https://twitter.com/sithappensge', 'twitter_link_clicked')">
               <ion-icon slot="start" name="logo-twitter"></ion-icon>
               twitter.com/<strong>sithappensge</strong>
             </ion-button>
@@ -136,11 +137,11 @@
     </ion-grid>
   </div>
 
+
   <sit-chat-cta></sit-chat-cta>
 
   <ion-fab class="whatsapp" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button size="small" color="success" target="_blank" href="https://wa.me/+995511124199"
-      (click)="logEvent('whatsapp_chat_clicked')">
+    <ion-fab-button size="small" color="success" (click)="goTo('https://wa.me/+995511124199', 'whatsapp_chat_clicked')">
       <ion-icon name="logo-whatsapp" color="primary"></ion-icon>
     </ion-fab-button>
   </ion-fab>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../../../environments/environment';
 import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
@@ -9,8 +9,10 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 // import { providePerformance, getPerformance } from '@angular/fire/performance';
 // import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-config';
 // import { provideStorage, getStorage } from '@angular/fire/storage';
-// import { initializeAppCheck, ReCaptchaV3Provider, provideAppCheck } from '@angular/fire/app-check';
+import { initializeAppCheck, provideAppCheck } from '@angular/fire/app-check';
 import { AnalyticsService } from './analytics.service';
+import { RecaptchaBrowser } from './appcheck-provider.service';
+
 
 @NgModule({
   imports: [
@@ -23,10 +25,10 @@ import { AnalyticsService } from './analytics.service';
     // providePerformance(() => getPerformance()),
     // provideRemoteConfig(() => getRemoteConfig()),
     // provideStorage(() => getStorage()),
-    // provideAppCheck(() => initializeAppCheck(getApp(), {
-    //   provider: new ReCaptchaV3Provider(environment.recaptcha.siteKey),
-    //   isTokenAutoRefreshEnabled: true
-    // })),
+    provideAppCheck((injector) => initializeAppCheck(getApp(), {
+      provider: injector.get(RecaptchaBrowser).provider(environment.recaptcha.siteKey),
+      isTokenAutoRefreshEnabled: true
+    })),
   ],
   providers: [
     ScreenTrackingService,

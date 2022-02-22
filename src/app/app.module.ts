@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FirebaseModule } from './modules/firebase/firebase.module';
 import { DataModule } from './modules/data/data.module';
+import { SideMenuModule } from './modules/ui/side-menu/side-menu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { DataModule } from './modules/data/data.module';
     AppRoutingModule,
     FirebaseModule,
     DataModule,
+    SideMenuModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

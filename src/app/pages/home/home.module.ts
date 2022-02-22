@@ -18,7 +18,7 @@ import { SurveyCtaModule } from '../../modules/ui/survey-cta/survey-cta.module';
     HeaderModule,
     SubscribeFormModule,
     ChatCtaModule,
-    SurveyCtaModule
+    SurveyCtaModule,
   ],
   declarations: [HomePage]
 })

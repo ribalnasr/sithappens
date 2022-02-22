@@ -1,7 +1,8 @@
 <ion-card class="ion-no-margin" [color]="subscribed ? 'secondary' : 'primary'">
+
   <ion-card-content>
 
-    <form [formGroup]="form" (submit)="subscribe()" *ngIf="!subscribed; else submitted">
+    <form [formGroup]="form" (submit)="subscribe()" *ngIf="!subscribed">
 
       <h3 class="ion-no-margin ion-margin-bottom">
         We’ll let you know when we’re ready.
@@ -34,23 +35,28 @@
       <div class="text-sm ion-text-center">
         Please fill in at least one field.
       </div>
+      <button type="submit" (click)="subscribe()" style="position: fixed; top: -500px; "></button>
       <ion-button type="submit" expand="block" size="large" [disabled]="!valid" color="light">
         <strong>Send me the good news!</strong>
       </ion-button>
     </form>
 
 
-    <ng-template #submitted>
+    <div class="thankyou" [class.visible]="subscribed">
       <h3 class="ion-no-margin ion-margin-bottom">
         Thank you!
       </h3>
       <p>
         We will be in touch.
       </p>
-      <div class="ion-padding-top">
+      <div class="ion-padding-vertical">
         Meanwhile, let's spread the word...
       </div>
-    </ng-template>
+      <div class="sharethis-inline-share-buttons"></div>
+
+    </div>
+
+
 
   </ion-card-content>
 </ion-card>
