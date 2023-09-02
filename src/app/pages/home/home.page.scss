@@ -1,26 +1,3 @@
-ion-header.mini-header {
-    position: absolute;
-
-    transition: background-color 150ms ease-in-out;
-    .icon-logo {
-        opacity: 0;
-        width: 36px;
-        margin: 0 6px;
-        transition: opacity 150ms ease-in-out;
-    }
-
-    ion-toolbar {
-        --background: transparent;
-    }
-
-    &.visible {
-        background-color: var(--ion-color-secondary);
-        .icon-logo {
-            opacity: 1;
-        }
-    }
-}
-
 h1 {
     white-space: nowrap;
     &:after {
